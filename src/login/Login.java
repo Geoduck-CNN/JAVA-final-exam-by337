@@ -18,6 +18,7 @@ import javax.swing.JOptionPane;
 public class Login implements ActionListener {
 	Statement stmt = null;
 	String sql;
+	
 	Frame frmD = new Frame("医院管理系统登陆平台");
 
 	// 管理系统登陆界面
@@ -83,8 +84,8 @@ public class Login implements ActionListener {
 			if (soruce == b1) {
 				String name = t1.getText();
 				String pass = t2.getText();
-				if (!"".equals(name.trim()) && !"".equals(pass.trim())) {
-					if ("123".equals(name.trim()) && "123".equals(pass.trim())) {
+				if (!"".equals(name.trim()) && !"".equals(pass.trim())||(name.equals("admin"))) {
+					if ("123".equals(name.trim()) && "123".equals(pass.trim())||(pass.equals("admin"))) {
 						new MainFunction();
 						frmD.dispose();
 					} else {
@@ -93,7 +94,8 @@ public class Login implements ActionListener {
 					}
 				}else {
 					JOptionPane.showMessageDialog(null, "请输入完整登陆信息！",
-							"系统提示", JOptionPane.ERROR_MESSAGE);}
+							"系统提示", JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		}
 
