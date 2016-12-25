@@ -254,3 +254,67 @@ public PatientFrame() {
 		frm1.setBounds(500, 200, 725, 395);
 		frm1.setBackground(Color.ORANGE);
 		frm1.setVisible(true);
+// 实现窗口关闭按扭的事件
+		frm1.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent e) {
+				frm1.dispose();
+			}
+		});
+
+		frm1.setResizable(false);// 固定窗口的大小
+
+		try {
+			stmt = JdbcUtil.getConnection().createStatement();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
+
+
+	public void actionPerformed(ActionEvent e) {
+		Object soruce = e.getSource();
+		ResultSet rs = null;
+		if (soruce == addA) {
+			try {
+				if (txf1.getText().trim().equals("")) {
+					JOptionPane.showMessageDialog(null, "病人编号不能为空！");
+					return;
+				} else if (txf2.getText().trim().equals("")) {
+					JOptionPane.showMessageDialog(null, "姓名不能为空！");
+					return;
+				}
+
+				sql = "select * from Patient where Pno='"
+						+ txf1.getText().trim() + "'";
+				rs = stmt.executeQuery(sql);
+				if (rs.next()) {
+					JOptionPane.showMessageDialog(null, "病人编号【"
+							+ txf1.getText().trim() + "】已经存在，请重新输入！");
+					return;
+				}
+				sql = "insert into Patient(Pno,Pname,Psex,Pbirthday,Pplace,Pbirthplace,Pcondition,Pbudget) values('"
+						+ txf1.getText().trim()
+						+ "','"
+						+ txf2.getText().trim()
+						+ "','"
+						+ txf3.getText().trim()
+						+ "','"
+						+ txf4.getText().trim()
+						+ "','"
+						+ txf5.getText().trim()
+						+ "','"
+						+ txf6.getText().trim()
+						+ "','"
+						+ txf7.getText().trim()
+						+ "','"
+						+ txf8.getText().trim()
+						+ "')";
+				stmt.executeUpdate(sql);
+				JOptionPane.showMessageDialog(null, "录入信息成功！");
+				clearFrameA();
+			} catch (Exception e1) {
+				e1.printStackTrace();
+			}
+		}
+       }
