@@ -35,8 +35,8 @@ public class MainFunction implements ActionListener {
 		emp.addActionListener(this);
 
 		frmX.setLayout(null);
-		frmX.setBackground(Color.ORANGE);
-		frmX.setBounds(500, 200, 350, 270);
+		frmX.setBackground(Color.WHITE);
+		frmX.setBounds(600, 300, 420, 320);
 		frmX.setVisible(true);
 
 		// 实现窗口关闭按扭的事件
@@ -52,7 +52,7 @@ public class MainFunction implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		Object soruce = e.getSource();
 		if (soruce == patientInfo) {
-			new PatientFrame();
+			new InfoFrame();
 		}
 		if (soruce == price) {
 			new MedicineFrame();
