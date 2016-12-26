@@ -36,8 +36,8 @@ public class Login implements ActionListener {
 	}
 
 	public Login() {
-		// 登陆界面配置
-		l1.setBounds(130, 60, 150, 20);
+		// 登陆界面
+		l1.setBounds(110, 50, 150, 20);
 		l2.setBounds(50, 90, 50, 20);
 		l3.setBounds(50, 120, 50, 20);
 		l4.setBounds(120, 200, 150, 20);
@@ -56,11 +56,11 @@ public class Login implements ActionListener {
 		frmD.add(b2);
 		frmD.setLayout(null);
 		frmD.setBounds(500, 200, 350, 230);
-		frmD.setBackground(Color.LIGHT_GRAY);
+		frmD.setBackground(Color.GREEN);
 		frmD.setVisible(true);
 		t2.setEchoChar('*');
 
-		// 实现窗口关闭按扭的事件
+		// 实现窗口关闭
 		frmD.addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
 				System.exit(0);
