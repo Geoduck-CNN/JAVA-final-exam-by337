@@ -131,6 +131,16 @@ public class Guahao implements ActionListener{
 						+ txf2.getText().trim()
 						+ "')";
 				stmt.executeUpdate(sql);
+				sql = "insert into Guahao(Pno,Pname,Dsubject,Dmdoctor) values('"
+						+ txf1.getText().trim()
+						+ "','"
+						+ txf2.getText().trim()
+						+ "','"
+						+ txf3.getText().trim()
+						+"','"
+						+txf4.getText().trim()
+						+ "')";
+				stmt.executeUpdate(sql);
 				sql = "insert into Hospitalize(Pno,Pname,Dsubject,Dmdoctor) values('"
 						+ txf1.getText().trim()
 						+ "','"
@@ -141,6 +151,7 @@ public class Guahao implements ActionListener{
 						+txf4.getText().trim()
 						+ "')";
 				stmt.executeUpdate(sql);
+				
 				JOptionPane.showMessageDialog(null, "录入信息成功！");
 				clearFrameA();
 			} catch (Exception e1) {

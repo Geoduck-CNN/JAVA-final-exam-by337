@@ -60,6 +60,12 @@ CREATE TABLE Examine
  Ename CHAR(20) , /*化验名*/
  Eprice CHAR(20)/*化验价格*/
 );
+CREATE TABLE Guahao
+(Pno CHAR(20),
+ Pname CHAR(20),
+ Dsubject CHAR(20),/*就医科别*/
+ Dmdoctor CHAR(20),/*主治医生*/
+ );
 
 
 

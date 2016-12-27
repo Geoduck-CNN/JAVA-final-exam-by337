@@ -1,6 +1,8 @@
 package hospital.login;
+import hospital.frame.Gunpin;
 import hospital.frame.MainFunction;
 import hospital.frame.Shoufeirenyuan;
+import hospital.frame.Yisheng;
 import hospital.util.JdbcUtil;
 
 import java.awt.Button;
@@ -94,7 +96,16 @@ public class Login implements ActionListener {
 					else if ("234".equals(name.trim()) && "234".equals(pass.trim())) {
 						new Shoufeirenyuan();
 						frmD.dispose();
-					}else {
+					}
+					else if ("345".equals(name.trim()) && "345".equals(pass.trim())){
+						new Gunpin();
+						frmD.dispose();
+					}
+					else if ("456".equals(name.trim()) && "456".equals(pass.trim())){
+						new Yisheng();
+						frmD.dispose();
+					}
+					else {
 						JOptionPane.showMessageDialog(null, "用户名或密码错误，请重新输入！",
 								"系统提示", JOptionPane.ERROR_MESSAGE);
 					}
