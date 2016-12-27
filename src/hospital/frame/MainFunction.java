@@ -11,16 +11,20 @@ public class MainFunction implements ActionListener {
 	// 管理系统选择界面
 	Label k1 = new Label("欢迎院长使用医院管理系统");
 	Button emp = new Button("医院员工管理");
+	Button yaopin = new Button("药品管理");
 
 
 	public MainFunction() {
 		// 选择界面配置
 		k1.setBounds(110, 50, 150, 30);
-		emp.setBounds(120, 140, 90, 30);
+		emp.setBounds(120, 100, 90, 30);
+		yaopin.setBounds(120, 180, 90, 30);
 		frmX.add(k1);
 		frmX.add(emp);
+		frmX.add(yaopin);
 
 		emp.addActionListener(this);
+		yaopin.addActionListener(this);
 
 		frmX.setLayout(null);
 		frmX.setBackground(Color.LIGHT_GRAY);
@@ -41,6 +45,9 @@ public class MainFunction implements ActionListener {
 		Object soruce = e.getSource();
 		if (soruce == emp) {
 			new EmpFrame();
+		}
+		if (soruce == yaopin){
+			new MedicineFrame();
 		}
 	}
 }

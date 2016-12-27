@@ -20,7 +20,7 @@ public class EmpFrame implements ActionListener {
 	Frame frm4 = new Frame("医院管理系统");
 
 	// 医院职员管理界面
-	Label labe12 = new Label("    Ｆ医院工作员工管理：（注意：查询，删除请输入姓名）");
+	Label labe12 = new Label("    医院工作员工管理：（注意：查询，删除请输入姓名）");
 	Label labe13 = new Label("    姓        名:");
 	Label labe14 = new Label("    工作编号:");
 	Label labe15 = new Label("    年       龄:");
@@ -40,9 +40,9 @@ public class EmpFrame implements ActionListener {
 	TextField lst58 = new TextField();
 	TextArea txa2 = new TextArea();
 
-	Button qry = new Button("E 查询");
-	Button del = new Button("E 删除");
-	Button add = new Button("E 录入");
+	Button qry = new Button("查询");
+	Button del = new Button("删除");
+	Button add = new Button("录入");
 
 	public void clearFrame() {
 		lst51.setText("");
@@ -109,7 +109,7 @@ public class EmpFrame implements ActionListener {
 
 		frm4.setLayout(null);
 		frm4.setBounds(500, 200, 610, 540);
-		frm4.setBackground(Color.ORANGE);
+		frm4.setBackground(Color.LIGHT_GRAY);
 		
 		frm4.setVisible(true);
 		// 实现窗口关闭按扭的事件

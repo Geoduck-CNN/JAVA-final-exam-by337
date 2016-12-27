@@ -23,7 +23,7 @@ public class Jiuyi implements ActionListener{
 	Frame frm1 = new Frame("医院管理系统");
 	
 	
-	Label labe2 = new Label("   病人就医档案：（注意：查询，删除请输入病人姓名）");
+	Label labe2 = new Label("   病人就医：");
 	Button btn1 = new Button("病人编号");
 	Button btn2 = new Button("病人姓名");
 	Button btn3 = new Button("就医科室");
@@ -152,15 +152,15 @@ public class Jiuyi implements ActionListener{
 		        if (soruce == addB) {
 		         try {
 
-			        sql = "insert into Hospitalize(Dcause,Dpresno,Dpill) values('"
-			       // + txf1.getText().trim()
-					//+ "','"
-					//+ txf2.getText().trim()
-					//+ "','"
-					//+ txf3.getText().trim()
-					//+"','"
-					//+ txf4.getText().trim()
-					//+"','"
+			        sql = "insert into Hospitalize(Pno,Pname,Dsubject,Dmdoctor,Dcause,Dpresno,Dpill) values('"
+			        + txf1.getText().trim()
+					+ "','"
+					+ txf2.getText().trim()
+					+ "','"
+					+ txf3.getText().trim()
+					+"','"
+					+ txf4.getText().trim()
+					+"','"
 			        + txf5.getText().trim()
 					+ "','"
 					+ txf6.getText().trim()
@@ -169,6 +169,10 @@ public class Jiuyi implements ActionListener{
 			        stmt.executeUpdate(sql);
 			        
 			        sql ="delete from Guahao where Pname='"+txf2.getText().trim()+"'";
+			        stmt.executeUpdate(sql);
+			        
+			        sql ="insert into Charge(Pno,Mno) values('" +txf1.getText().trim() +"','"
+			        		+ txf7.getText().trim()+"')";
 			        stmt.executeUpdate(sql);
 
 			JOptionPane.showMessageDialog(null, "录入信息成功！");

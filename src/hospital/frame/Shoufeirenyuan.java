@@ -8,7 +8,7 @@ public class Shoufeirenyuan implements ActionListener{
 	Frame frmX = new Frame("医院管理系统");
 
 	// 管理系统选择界面
-	Label k1 = new Label("欢迎使用收费管理系统");
+	Label k1 = new Label("欢迎使用挂号收费管理系统");
 	Button patientInfo = new Button("挂号管理");
 	Button price = new Button("收费管理");
 	
@@ -28,7 +28,7 @@ public class Shoufeirenyuan implements ActionListener{
 
 		frmX.setLayout(null);
 		frmX.setBackground(Color.LIGHT_GRAY);
-		frmX.setBounds(600, 300, 420, 320);
+		frmX.setBounds(600, 300, 420, 220);
 		frmX.setVisible(true);
 
 		// 实现窗口关闭按扭的事件

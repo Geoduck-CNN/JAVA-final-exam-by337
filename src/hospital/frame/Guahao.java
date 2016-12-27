@@ -23,16 +23,14 @@ public class Guahao implements ActionListener{
 
 	// 管理系统病人资料界面
 	// Ａ病人基本资料
-	Label labe1 = new Label("    病人基本资料：  （注意：查询，删除请输入病人者姓名）");
+	Label labe1 = new Label("    挂号");
 	Button btn1 = new Button("病人编号");
 	Button btn2 = new Button("姓名");
 	Button btn3 = new Button("就医科别");
 	Button btn4 = new Button("主治医师");
 
 
-	Button addA = new Button("录入");
-	Button delA = new Button("删除");
-	Button qryA = new Button("查询");
+	Button addA = new Button("挂号");
 
 	TextField txf1 = new TextField();
 	TextField txf2 = new TextField();
@@ -48,9 +46,6 @@ public class Guahao implements ActionListener{
 	}
 	public Guahao() {
 		addA.addActionListener(this);
-		delA.addActionListener(this);
-		// updateA.addActionListener(this);
-		qryA.addActionListener(this);
 
 		// 病人资料管理界面
 		labe1.setBounds(0, 50, 1024, 20);
@@ -58,13 +53,11 @@ public class Guahao implements ActionListener{
 		txf1.setBounds(5, 85, 95, 20);
 		btn2.setBounds(100, 70, 80, 15);
 		txf2.setBounds(100, 85, 80, 20);
-		btn3.setBounds(180, 70, 40, 15);
-		txf3.setBounds(180, 85, 40, 20);
-		btn4.setBounds(220, 70, 60, 15);
-		txf4.setBounds(220, 85, 60, 20);
+		btn3.setBounds(180, 70, 80, 15);
+		txf3.setBounds(180, 85, 80, 20);
+		btn4.setBounds(260, 70, 60, 15);
+		txf4.setBounds(260, 85, 60, 20);
 		addA.setBounds(105, 115, 50, 20);
-		delA.setBounds(260, 115, 50, 20);
-		qryA.setBounds(415, 115, 50, 20);
 
 		
 		frm1.add(labe1);
@@ -73,17 +66,13 @@ public class Guahao implements ActionListener{
 		frm1.add(btn3);
 		frm1.add(btn4);
 		frm1.add(addA);
-		frm1.add(delA);
-		// frm1.add(updateA);
-		frm1.add(qryA);
-
 		frm1.add(txf1);
 		frm1.add(txf2);
 		frm1.add(txf3);
 		frm1.add(txf4);
 
 		frm1.setLayout(null);
-		frm1.setBounds(500, 200, 725,255);
+		frm1.setBounds(500, 200, 400,205);
 		frm1.setBackground(Color.LIGHT_GRAY);
 		frm1.setVisible(true);
 
@@ -152,7 +141,7 @@ public class Guahao implements ActionListener{
 						+ "')";
 				stmt.executeUpdate(sql);
 				
-				JOptionPane.showMessageDialog(null, "录入信息成功！");
+				JOptionPane.showMessageDialog(null, "挂号成功！");
 				clearFrameA();
 			} catch (Exception e1) {
 				e1.printStackTrace();

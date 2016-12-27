@@ -47,11 +47,11 @@ public class Gunpin implements ActionListener{
 		labe10.setBounds(5, 70, 90, 20);
 		labe11.setBounds(5, 100, 90, 20);
 		lst41.setBounds(100, 70, 100, 20);
-		txa1.setBounds(20, 125, 50, 20);
-		txt1.setBounds(75,125,50,20);
-		txt2.setBounds(130,125,50,20);
+		txa1.setBounds(20, 125, 70, 20);
+		txt1.setBounds(95,125,50,20);
+		txt2.setBounds(150,125,50,20);
 		txt3.setBounds(250,70,20,20);
-		qry.setBounds(250, 325, 50, 20);
+		qry.setBounds(100, 225, 50, 20);
 		frm3.add(labe9);
 		frm3.add(labe10);
 		frm3.add(labe11);
@@ -66,7 +66,7 @@ public class Gunpin implements ActionListener{
 		qry.addActionListener(this);
 
 		frm3.setLayout(null);
-		frm3.setBounds(500, 200, 460, 400);
+		frm3.setBounds(500, 200, 350, 300);
 		frm3.setBackground(Color.LIGHT_GRAY);
 		frm3.setVisible(true);
 
@@ -108,15 +108,12 @@ public class Gunpin implements ActionListener{
 					txt1.setText(rs.getString(2));
 				    txt2.setText(rs.getString(3));
 				} 
-				else {
-					JOptionPane.showMessageDialog(null, "没有查询到【" + _id + "】!");
-				}
 				sql ="select count(Pno) from Guahao group by Dsubject having Dsubject='" + _id + "'";
 				a =stmt.executeQuery(sql);
 				if(a.next())
 					txt3.setText(a.getString(1));
 				else {
-					JOptionPane.showMessageDialog(null, "没有查询到【" + _id + "】!");
+					JOptionPane.showMessageDialog(null, "没有病人在【" + _id + "】排队!");
 				}
 			} catch (Exception e1) {
 				e1.printStackTrace();

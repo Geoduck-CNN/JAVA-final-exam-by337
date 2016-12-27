@@ -14,19 +14,19 @@ public class Yisheng implements ActionListener{
 
 	public Yisheng() {
 		// 选择界面配置
-		k1.setBounds(110, 50, 150, 30);
-		patientInfo.setBounds(70, 100, 90, 30);
-		chufang.setBounds(70, 180, 90, 30);
+		k1.setBounds(90, 50, 150, 30);
+		patientInfo.setBounds(100, 100, 90, 30);
+		chufang.setBounds(100, 180, 90, 30);
 		frmX.add(k1);
 		frmX.add(patientInfo);
 		frmX.add(chufang);
-
+		
 		patientInfo.addActionListener(this);
 		chufang.addActionListener(this);
 
 		frmX.setLayout(null);
-		frmX.setBackground(Color.WHITE);
-		frmX.setBounds(600, 300, 420, 320);
+		frmX.setBackground(Color.LIGHT_GRAY);
+		frmX.setBounds(600, 300, 300, 250);
 		frmX.setVisible(true);
 
 		// 实现窗口关闭按扭的事件

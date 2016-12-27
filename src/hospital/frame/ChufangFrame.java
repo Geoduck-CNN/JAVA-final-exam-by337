@@ -21,12 +21,12 @@ public class ChufangFrame implements ActionListener {
 	Frame frm3 = new Frame("医院管理系统");
 
 	// 处方管理界面
-	Label labe9 = new Label("    Ｅ处方管理：（查询，删除时直接输入处方编号)");
+	Label labe9 = new Label("     处方管理：（查询，删除时直接输入处方编号)");
 	Label labe10 = new Label("    处方编号：");
 	Label labe11 = new Label("    处方内容：");
-	Button qry = new Button("E 查询");
-	Button del = new Button("E 删除");
-	Button add = new Button("E 录入");
+	Button qry = new Button("查询");
+	Button del = new Button("删除");
+	Button add = new Button("录入");
 
 	TextField lst41 = new TextField();
 	TextArea txa1 = new TextArea();
@@ -63,7 +63,7 @@ public class ChufangFrame implements ActionListener {
 
 		frm3.setLayout(null);
 		frm3.setBounds(500, 200, 460, 400);
-		frm3.setBackground(Color.ORANGE);
+		frm3.setBackground(Color.LIGHT_GRAY);
 		frm3.setVisible(true);
 
 		// 实现窗口关闭按扭的事件
